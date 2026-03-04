@@ -1,23 +1,16 @@
 
 
-## Plano: Centralizar foto e distribuir texto na mesma altura
-
-### Problema atual
-- A foto está alinhada ao topo (`items-start`) e tem `max-h-[700px]`, ficando "colada" no canto superior direito
-- O texto ocupa mais altura que a foto, criando espaço vazio embaixo da imagem
-- Na referência, a foto está mais centralizada verticalmente e o texto se distribui na mesma altura
+## Plano: Unificar fontes e reduzir tamanho do texto na bio
 
 ### Alterações em `src/pages/Index.tsx`
 
-1. **Centralizar verticalmente**: Mudar `items-start` para `items-center` no container flex (linha 59), para que a foto fique centralizada em relação ao texto
+1. **Remover todos os `<strong>` e `<em>`** dos parágrafos (linhas 66-108), substituindo por texto simples sem bold/itálico. Manter o texto mas remover as tags de formatação e classes `text-foreground` associadas.
 
-2. **Reduzir tamanho do título**: Diminuir de `text-4xl md:text-5xl lg:text-6xl` para `text-3xl md:text-4xl lg:text-5xl` (linha 62), compactando o bloco de texto
+2. **Remover estilo especial das frases em itálico** (linhas 99-104): as duas frases "A fotografia segue..." e "A estratégia..." perdem `font-display italic text-foreground text-base md:text-lg` e ficam como parágrafos normais.
 
-3. **Reduzir espaçamento entre parágrafos**: Mudar `space-y-5` para `space-y-4` e `mb-8` do titulo para `mb-6` (linhas 62, 65)
+3. **Reduzir tamanho da fonte dos parágrafos**: Mudar de `text-sm md:text-base` para `text-xs md:text-sm` (linha 65) para compactar o bloco de texto e igualar à altura da foto.
 
-4. **Reduzir padding do texto**: Mudar `p-6 md:p-10` para `p-4 md:p-8` (linha 61)
+4. **Reduzir título**: Mudar de `text-3xl md:text-4xl lg:text-5xl` para `text-2xl md:text-3xl lg:text-4xl` (linha 62) e `mb-6` para `mb-4`.
 
-5. **Ajustar tamanho da foto**: Remover `max-h-[700px]`, deixar a foto com proporção natural. Adicionar `max-w-full` para garantir que não ultrapasse o container
-
-Resultado: texto e foto ficam com alturas semelhantes, foto centralizada verticalmente, layout equilibrado.
+5. **Reduzir espaçamento**: Mudar `space-y-4` para `space-y-3` (linha 65).
 
