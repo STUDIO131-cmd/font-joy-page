@@ -52,10 +52,13 @@ const Index = () => {
           )}
         </div>
 
-        {/* Bio Section */}
-        <div className="w-full flex flex-col md:flex-row gap-8 md:gap-12 items-start">
+      </div>
+
+      {/* Bio Section - wider container */}
+      <div className="w-full max-w-6xl px-4 mt-16">
+        <div className="w-full flex flex-col md:flex-row items-stretch gap-0">
           {/* Text - Left */}
-          <div className="flex-1 text-left">
+          <div className="md:w-[55%] text-left p-6 md:p-10">
             <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-medium text-foreground mb-8 leading-[1.1]">
               Prazer, eu<br />sou Igor.
             </h2>
@@ -106,12 +109,12 @@ const Index = () => {
             </div>
           </div>
 
-          {/* Photo - Right, aligned to top */}
-          <div className="w-full md:w-[340px] lg:w-[400px] flex-shrink-0 md:sticky md:top-8">
+          {/* Photo - Right, full height */}
+          <div className="md:w-[45%] flex-shrink-0">
             <img
               src={igorFull}
               alt="Igor Gagliardi"
-              className="w-full h-auto object-cover"
+              className="w-full h-full object-cover rounded-lg"
               loading="lazy"
             />
           </div>
