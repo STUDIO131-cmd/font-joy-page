@@ -56,58 +56,63 @@ const Index = () => {
 
       {/* Bio Section - wider container */}
       <div className="w-full max-w-6xl px-4 mt-16">
-        <div className="w-full flex flex-col md:flex-row items-center gap-0">
-          {/* Text - Left */}
-          <div className="md:w-[55%] text-left p-4 md:p-8">
-            <h2 className="font-display text-2xl md:text-3xl lg:text-4xl font-medium text-foreground mb-4 leading-[1.1]">
-              Prazer, eu<br />sou Igor.
-            </h2>
-            <div className="space-y-3 text-xs md:text-sm leading-relaxed text-muted-foreground font-body">
-              <p>
-                Empreendo há mais de 10 anos. Sou naturalmente artista, comunicador e apaixonado por organização.
-              </p>
-              <p>
-                Minha trajetória começa na fotografia e ganha forma no projeto "Como Você Se Vê?", que alcança
-                reconhecimento regional e constrói uma marca registrada em seu segmento.
-              </p>
-              <p>
-                Esse projeto foi meu primeiro laboratório em marketing digital, branding e comunicação. Foi ali que entendi, na prática, como identidade e narrativa influenciam decisões — e esse
-                olhar passou a ser justamente o que meus clientes buscavam ao precisar se posicionar
-                profissionalmente.
-              </p>
-              <p>
-                Dessa experiência nasce o Studio 131, minha agência de conteúdo e mídia, que cresceu mais de 5x nos últimos quatro anos ao unir criação e método.
-              </p>
-              <p>
-                Sou reconhecido por integrar visão criativa e pensamento estratégico em negócios,
-                posicionamento e marcas, atuando tanto com grandes marcas nacionais quanto com pequenos e
-                médios empreendedores regionais.
-              </p>
-              <p>
-                Esse desenvolvimento me levou a criar programas educacionais e consultorias que já impactaram
-                mais de 160 profissionais, sempre com foco em comunicação, posicionamento e resultado.
-              </p>
-              <p>
-                A fotografia segue como meu eixo artístico.
-              </p>
-              <p>
-                A estratégia, como instrumento de crescimento.
-              </p>
-              <p>
-                Aqui você não encontrará atalhos nem promessas fáceis, mas clareza, estrutura e construção de
-                longo prazo.
-              </p>
-            </div>
-          </div>
+        <div className="relative rounded-2xl overflow-hidden">
+          <div className="absolute inset-0 bio-glass-bg" />
+          <div className="relative bg-foreground/[0.03] backdrop-blur-sm border border-foreground/[0.08] rounded-2xl overflow-hidden">
+            <div className="w-full flex flex-col md:flex-row items-center gap-0">
+              {/* Text - Left */}
+              <div className="md:w-[55%] text-left p-4 md:p-8">
+                <h2 className="font-display text-2xl md:text-3xl lg:text-4xl font-medium text-foreground mb-4 leading-[1.1]">
+                  Prazer, eu<br />sou Igor.
+                </h2>
+                <div className="space-y-3 text-xs md:text-sm leading-relaxed text-muted-foreground font-body">
+                  <p>
+                    Empreendo há mais de 10 anos. Sou naturalmente artista, comunicador e apaixonado por organização.
+                  </p>
+                  <p>
+                    Minha trajetória começa na fotografia e ganha forma no projeto "Como Você Se Vê?", que alcança
+                    reconhecimento regional e constrói uma marca registrada em seu segmento.
+                  </p>
+                  <p>
+                    Esse projeto foi meu primeiro laboratório em marketing digital, branding e comunicação. Foi ali que entendi, na prática, como identidade e narrativa influenciam decisões — e esse
+                    olhar passou a ser justamente o que meus clientes buscavam ao precisar se posicionar
+                    profissionalmente.
+                  </p>
+                  <p>
+                    Dessa experiência nasce o Studio 131, minha agência de conteúdo e mídia, que cresceu mais de 5x nos últimos quatro anos ao unir criação e método.
+                  </p>
+                  <p>
+                    Sou reconhecido por integrar visão criativa e pensamento estratégico em negócios,
+                    posicionamento e marcas, atuando tanto com grandes marcas nacionais quanto com pequenos e
+                    médios empreendedores regionais.
+                  </p>
+                  <p>
+                    Esse desenvolvimento me levou a criar programas educacionais e consultorias que já impactaram
+                    mais de 160 profissionais, sempre com foco em comunicação, posicionamento e resultado.
+                  </p>
+                  <p>
+                    A fotografia segue como meu eixo artístico.
+                  </p>
+                  <p>
+                    A estratégia, como instrumento de crescimento.
+                  </p>
+                  <p>
+                    Aqui você não encontrará atalhos nem promessas fáceis, mas clareza, estrutura e construção de
+                    longo prazo.
+                  </p>
+                </div>
+              </div>
 
-          {/* Photo - Right, full height */}
-          <div className="md:w-[45%] flex-shrink-0 overflow-hidden rounded-lg">
-            <img
-              src={igorFull}
-              alt="Igor Gagliardi"
-              className="w-full h-auto object-cover object-top"
-              loading="lazy"
-            />
+              {/* Photo - Right, full height */}
+              <div className="md:w-[45%] flex-shrink-0 overflow-hidden">
+                <img
+                  src={igorFull}
+                  alt="Igor Gagliardi"
+                  className="w-full h-auto object-cover object-top"
+                  loading="lazy"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </div>
