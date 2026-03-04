@@ -56,7 +56,7 @@ const Index = () => {
 
       {/* Bio Section - wider container */}
       <div className="w-full max-w-6xl px-4 mt-16">
-        <div className="w-full flex flex-col md:flex-row items-stretch gap-0">
+        <div className="w-full flex flex-col md:flex-row items-start gap-0">
           {/* Text - Left */}
           <div className="md:w-[55%] text-left p-6 md:p-10">
             <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-medium text-foreground mb-8 leading-[1.1]">
@@ -110,11 +110,11 @@ const Index = () => {
           </div>
 
           {/* Photo - Right, full height */}
-          <div className="md:w-[45%] flex-shrink-0">
+          <div className="md:w-[45%] flex-shrink-0 overflow-hidden rounded-lg max-h-[700px]">
             <img
               src={igorFull}
               alt="Igor Gagliardi"
-              className="w-full h-full object-cover rounded-lg"
+              className="w-full h-auto object-cover object-top"
               loading="lazy"
             />
           </div>
