@@ -59,33 +59,24 @@ const Index = () => {
         <div className="w-full flex flex-col md:flex-row items-center gap-0">
           {/* Text - Left */}
           <div className="md:w-[55%] text-left p-4 md:p-8">
-            <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-medium text-foreground mb-6 leading-[1.1]">
+            <h2 className="font-display text-2xl md:text-3xl lg:text-4xl font-medium text-foreground mb-4 leading-[1.1]">
               Prazer, eu<br />sou Igor.
             </h2>
-            <div className="space-y-4 text-sm md:text-base leading-relaxed text-muted-foreground font-body">
+            <div className="space-y-3 text-xs md:text-sm leading-relaxed text-muted-foreground font-body">
               <p>
-                Empreendo há <strong className="text-foreground">mais de 10 anos.</strong> Sou naturalmente{" "}
-                <em>artista, comunicador e apaixonado por organização.</em>
+                Empreendo há mais de 10 anos. Sou naturalmente artista, comunicador e apaixonado por organização.
               </p>
               <p>
-                Minha trajetória começa na fotografia e ganha forma no projeto{" "}
-                <strong className="text-foreground"><em>"Como Você Se Vê?"</em></strong>, que alcança
+                Minha trajetória começa na fotografia e ganha forma no projeto "Como Você Se Vê?", que alcança
                 reconhecimento regional e constrói uma marca registrada em seu segmento.
               </p>
               <p>
-                <strong className="text-foreground">
-                  Esse projeto foi meu primeiro laboratório em marketing digital, branding e comunicação.
-                </strong>{" "}
-                Foi ali que entendi, na prática, como identidade e narrativa influenciam decisões — e esse
+                Esse projeto foi meu primeiro laboratório em marketing digital, branding e comunicação. Foi ali que entendi, na prática, como identidade e narrativa influenciam decisões — e esse
                 olhar passou a ser justamente o que meus clientes buscavam ao precisar se posicionar
                 profissionalmente.
               </p>
               <p>
-                Dessa experiência nasce o <strong className="text-foreground">Studio 131</strong>, minha
-                agência de conteúdo e mídia, que{" "}
-                <strong className="text-foreground">
-                  cresceu mais de 5x nos últimos quatro anos ao unir criação e método.
-                </strong>
+                Dessa experiência nasce o Studio 131, minha agência de conteúdo e mídia, que cresceu mais de 5x nos últimos quatro anos ao unir criação e método.
               </p>
               <p>
                 Sou reconhecido por integrar visão criativa e pensamento estratégico em negócios,
@@ -96,10 +87,10 @@ const Index = () => {
                 Esse desenvolvimento me levou a criar programas educacionais e consultorias que já impactaram
                 mais de 160 profissionais, sempre com foco em comunicação, posicionamento e resultado.
               </p>
-              <p className="font-display italic text-foreground text-base md:text-lg">
+              <p>
                 A fotografia segue como meu eixo artístico.
               </p>
-              <p className="font-display italic text-foreground text-base md:text-lg">
+              <p>
                 A estratégia, como instrumento de crescimento.
               </p>
               <p>
