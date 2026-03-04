@@ -56,13 +56,13 @@ const Index = () => {
 
       {/* Bio Section - wider container */}
       <div className="w-full max-w-6xl px-4 mt-16">
-        <div className="w-full flex flex-col md:flex-row items-start gap-0">
+        <div className="w-full flex flex-col md:flex-row items-center gap-0">
           {/* Text - Left */}
-          <div className="md:w-[55%] text-left p-6 md:p-10">
-            <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-medium text-foreground mb-8 leading-[1.1]">
+          <div className="md:w-[55%] text-left p-4 md:p-8">
+            <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-medium text-foreground mb-6 leading-[1.1]">
               Prazer, eu<br />sou Igor.
             </h2>
-            <div className="space-y-5 text-sm md:text-base leading-relaxed text-muted-foreground font-body">
+            <div className="space-y-4 text-sm md:text-base leading-relaxed text-muted-foreground font-body">
               <p>
                 Empreendo há <strong className="text-foreground">mais de 10 anos.</strong> Sou naturalmente{" "}
                 <em>artista, comunicador e apaixonado por organização.</em>
@@ -110,7 +110,7 @@ const Index = () => {
           </div>
 
           {/* Photo - Right, full height */}
-          <div className="md:w-[45%] flex-shrink-0 overflow-hidden rounded-lg max-h-[700px]">
+          <div className="md:w-[45%] flex-shrink-0 overflow-hidden rounded-lg">
             <img
               src={igorFull}
               alt="Igor Gagliardi"
