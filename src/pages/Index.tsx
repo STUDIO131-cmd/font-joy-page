@@ -23,9 +23,12 @@ const Index = () => {
           <img src={igorProfile} alt="Igor Gagliardi" className="w-full h-full object-cover" />
         </div>
 
-        <h1 className="font-display text-3xl md:text-4xl font-medium tracking-tight text-foreground mb-2">
-          Igor Gagliardi
-        </h1>
+        <div className="relative inline-flex items-center px-8 py-3 rounded-xl bg-foreground/5 backdrop-blur-md border border-foreground/10 overflow-hidden mb-4">
+          <div className="absolute inset-0 glass-shimmer" />
+          <h1 className="relative font-display text-3xl md:text-4xl font-medium tracking-tight text-foreground">
+            Igor Gagliardi
+          </h1>
+        </div>
         <p className="text-muted-foreground text-sm font-body tracking-wide text-center mb-1">
           Estrategista de Marca & Marketing e Fotógrafo.
         </p>
