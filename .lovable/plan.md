@@ -1,16 +1,35 @@
 
 
-## Plano: Unificar fontes e reduzir tamanho do texto na bio
+## Plano: Background glassmorphism na seção de biografia
 
-### Alterações em `src/pages/Index.tsx`
+### Alterações
 
-1. **Remover todos os `<strong>` e `<em>`** dos parágrafos (linhas 66-108), substituindo por texto simples sem bold/itálico. Manter o texto mas remover as tags de formatação e classes `text-foreground` associadas.
+**1. `src/pages/Index.tsx` (linha 58-59)**
+Adicionar classes de glassmorphism no container da bio:
+- Trocar o div wrapper atual por um com `bg-black/5 backdrop-blur-sm border border-white/20 rounded-2xl overflow-hidden` 
+- Manter `max-w-6xl` mas adicionar margem interna com padding
+- A foto precisa ter `rounded-r-2xl` para acompanhar o arredondamento do container
 
-2. **Remover estilo especial das frases em itálico** (linhas 99-104): as duas frases "A fotografia segue..." e "A estratégia..." perdem `font-display italic text-foreground text-base md:text-lg` e ficam como parágrafos normais.
+**2. `src/index.css`**
+Adicionar uma animação sutil de gradiente no fundo do bloco bio:
+- Keyframe `bio-glow` que move um gradiente radial suave, criando um efeito de luz pulsante atrás do glass
+- Classe `.bio-glass-bg` com a animação
 
-3. **Reduzir tamanho da fonte dos parágrafos**: Mudar de `text-sm md:text-base` para `text-xs md:text-sm` (linha 65) para compactar o bloco de texto e igualar à altura da foto.
+### Detalhes das mudanças:
 
-4. **Reduzir título**: Mudar de `text-3xl md:text-4xl lg:text-5xl` para `text-2xl md:text-3xl lg:text-4xl` (linha 62) e `mb-6` para `mb-4`.
+**Container bio (Index.tsx linhas 57-58):**
+```
+<div className="w-full max-w-6xl px-4 mt-16">
+```
+→
+```
+<div className="w-full max-w-6xl px-4 mt-16">
+  <div className="relative rounded-2xl overflow-hidden">
+    <div className="absolute inset-0 bio-glass-bg" />
+    <div className="relative bg-black/[0.03] backdrop-blur-sm border border-black/[0.08] rounded-2xl overflow-hidden">
+```
 
-5. **Reduzir espaçamento**: Mudar `space-y-4` para `space-y-3` (linha 65).
+**Fechar os novos divs** após o fechamento do flex container (linha 112).
+
+**index.css:** Adicionar keyframe `bio-glow` — gradiente radial que se desloca lentamente (8-10s loop), com opacidade muito baixa para criar um efeito luminoso sutil.
 
