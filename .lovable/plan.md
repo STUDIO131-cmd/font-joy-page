@@ -1,16 +1,23 @@
 
 
-## Problema
-Com `items-stretch` e `h-full object-cover`, a imagem está sendo esticada para cobrir toda a altura do texto, ficando distorcida/fina porque a proporção natural da foto não comporta essa altura.
+## Plano: Centralizar foto e distribuir texto na mesma altura
 
-## Solução
-Trocar `items-stretch` por `items-start` no container flex, e na imagem remover `h-full` — mantendo apenas `w-full h-auto object-cover`. Para que a foto ainda acompanhe razoavelmente o texto sem distorcer, usar `object-top` e limitar a altura máxima com `max-h-[700px]` dentro de um container com `overflow-hidden`.
+### Problema atual
+- A foto está alinhada ao topo (`items-start`) e tem `max-h-[700px]`, ficando "colada" no canto superior direito
+- O texto ocupa mais altura que a foto, criando espaço vazio embaixo da imagem
+- Na referência, a foto está mais centralizada verticalmente e o texto se distribui na mesma altura
 
-### Alterações em `src/pages/Index.tsx`:
+### Alterações em `src/pages/Index.tsx`
 
-1. **Linha ~57**: Mudar `items-stretch` para `items-start` no container flex da bio
-2. **Linha ~113**: Adicionar `overflow-hidden rounded-lg` no div da foto  
-3. **Linha ~117**: Mudar a classe da img de `w-full h-full object-cover rounded-lg` para `w-full h-auto object-cover object-top`
+1. **Centralizar verticalmente**: Mudar `items-start` para `items-center` no container flex (linha 59), para que a foto fique centralizada em relação ao texto
 
-Isso mantém a foto em proporção natural, alinhada ao topo, sem esticar.
+2. **Reduzir tamanho do título**: Diminuir de `text-4xl md:text-5xl lg:text-6xl` para `text-3xl md:text-4xl lg:text-5xl` (linha 62), compactando o bloco de texto
+
+3. **Reduzir espaçamento entre parágrafos**: Mudar `space-y-5` para `space-y-4` e `mb-8` do titulo para `mb-6` (linhas 62, 65)
+
+4. **Reduzir padding do texto**: Mudar `p-6 md:p-10` para `p-4 md:p-8` (linha 61)
+
+5. **Ajustar tamanho da foto**: Remover `max-h-[700px]`, deixar a foto com proporção natural. Adicionar `max-w-full` para garantir que não ultrapasse o container
+
+Resultado: texto e foto ficam com alturas semelhantes, foto centralizada verticalmente, layout equilibrado.
 
