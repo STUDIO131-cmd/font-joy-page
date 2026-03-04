@@ -33,8 +33,7 @@ const Index = () => {
           Estrategista de Marca & Marketing e Fotógrafo.
         </p>
         <p className="text-muted-foreground text-sm font-body tracking-wide text-center mb-10">
-          <span className="font-semibold text-foreground">Fundador do Studio 131</span>{" "}
-          onde construímos uma Jornada de Ascensão.
+          Fundador do Studio 131 onde construímos uma Jornada de Ascensão.
         </p>
 
         {/* Link Banners */}
