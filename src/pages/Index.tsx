@@ -52,74 +52,68 @@ const Index = () => {
           )}
         </div>
 
-        {/* Bio Section with Glass Background */}
-        <div className="relative w-full rounded-2xl overflow-hidden p-6 md:p-10">
-          {/* Glass background */}
-          <div className="absolute inset-0 bg-foreground/[0.03] backdrop-blur-sm border border-foreground/10 rounded-2xl" />
-          <div className="absolute inset-0 glass-shimmer" />
-
-          <div className="relative z-10 flex flex-col md:flex-row gap-8 md:gap-10">
-            {/* Text - Left */}
-            <div className="flex-1 text-left">
-              <h2 className="font-display text-2xl md:text-3xl font-medium text-foreground mb-8">
-                Prazer, eu sou Igor.
-              </h2>
-              <div className="space-y-5 text-sm md:text-base leading-relaxed text-muted-foreground font-body">
-                <p>
-                  Empreendo há <strong className="text-foreground">mais de 10 anos.</strong> Sou naturalmente{" "}
-                  <em>artista, comunicador e apaixonado por organização.</em>
-                </p>
-                <p>
-                  Minha trajetória começa na fotografia e ganha forma no projeto{" "}
-                  <strong className="text-foreground"><em>"Como Você Se Vê?"</em></strong>, que alcança
-                  reconhecimento regional e constrói uma marca registrada em seu segmento.
-                </p>
-                <p>
-                  <strong className="text-foreground">
-                    Esse projeto foi meu primeiro laboratório em marketing digital, branding e comunicação.
-                  </strong>{" "}
-                  Foi ali que entendi, na prática, como identidade e narrativa influenciam decisões — e esse
-                  olhar passou a ser justamente o que meus clientes buscavam ao precisar se posicionar
-                  profissionalmente.
-                </p>
-                <p>
-                  Dessa experiência nasce o <strong className="text-foreground">Studio 131</strong>, minha
-                  agência de conteúdo e mídia, que{" "}
-                  <strong className="text-foreground">
-                    cresceu mais de 5x nos últimos quatro anos ao unir criação e método.
-                  </strong>
-                </p>
-                <p>
-                  Sou reconhecido por integrar visão criativa e pensamento estratégico em negócios,
-                  posicionamento e marcas, atuando tanto com grandes marcas nacionais quanto com pequenos e
-                  médios empreendedores regionais.
-                </p>
-                <p>
-                  Esse desenvolvimento me levou a criar programas educacionais e consultorias que já impactaram
-                  mais de 160 profissionais, sempre com foco em comunicação, posicionamento e resultado.
-                </p>
-                <p className="font-display italic text-foreground text-base md:text-lg">
-                  A fotografia segue como meu eixo artístico.
-                </p>
-                <p className="font-display italic text-foreground text-base md:text-lg">
-                  A estratégia, como instrumento de crescimento.
-                </p>
-                <p>
-                  Aqui você não encontrará atalhos nem promessas fáceis, mas clareza, estrutura e construção de
-                  longo prazo.
-                </p>
-              </div>
+        {/* Bio Section */}
+        <div className="w-full flex flex-col md:flex-row gap-8 md:gap-12 items-start">
+          {/* Text - Left */}
+          <div className="flex-1 text-left">
+            <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-medium text-foreground mb-8 leading-[1.1]">
+              Prazer, eu<br />sou Igor.
+            </h2>
+            <div className="space-y-5 text-sm md:text-base leading-relaxed text-muted-foreground font-body">
+              <p>
+                Empreendo há <strong className="text-foreground">mais de 10 anos.</strong> Sou naturalmente{" "}
+                <em>artista, comunicador e apaixonado por organização.</em>
+              </p>
+              <p>
+                Minha trajetória começa na fotografia e ganha forma no projeto{" "}
+                <strong className="text-foreground"><em>"Como Você Se Vê?"</em></strong>, que alcança
+                reconhecimento regional e constrói uma marca registrada em seu segmento.
+              </p>
+              <p>
+                <strong className="text-foreground">
+                  Esse projeto foi meu primeiro laboratório em marketing digital, branding e comunicação.
+                </strong>{" "}
+                Foi ali que entendi, na prática, como identidade e narrativa influenciam decisões — e esse
+                olhar passou a ser justamente o que meus clientes buscavam ao precisar se posicionar
+                profissionalmente.
+              </p>
+              <p>
+                Dessa experiência nasce o <strong className="text-foreground">Studio 131</strong>, minha
+                agência de conteúdo e mídia, que{" "}
+                <strong className="text-foreground">
+                  cresceu mais de 5x nos últimos quatro anos ao unir criação e método.
+                </strong>
+              </p>
+              <p>
+                Sou reconhecido por integrar visão criativa e pensamento estratégico em negócios,
+                posicionamento e marcas, atuando tanto com grandes marcas nacionais quanto com pequenos e
+                médios empreendedores regionais.
+              </p>
+              <p>
+                Esse desenvolvimento me levou a criar programas educacionais e consultorias que já impactaram
+                mais de 160 profissionais, sempre com foco em comunicação, posicionamento e resultado.
+              </p>
+              <p className="font-display italic text-foreground text-base md:text-lg">
+                A fotografia segue como meu eixo artístico.
+              </p>
+              <p className="font-display italic text-foreground text-base md:text-lg">
+                A estratégia, como instrumento de crescimento.
+              </p>
+              <p>
+                Aqui você não encontrará atalhos nem promessas fáceis, mas clareza, estrutura e construção de
+                longo prazo.
+              </p>
             </div>
+          </div>
 
-            {/* Photo - Right */}
-            <div className="w-full md:w-64 lg:w-72 flex-shrink-0">
-              <img
-                src={igorFull}
-                alt="Igor Gagliardi"
-                className="w-full h-auto rounded-xl object-cover"
-                loading="lazy"
-              />
-            </div>
+          {/* Photo - Right, aligned to top */}
+          <div className="w-full md:w-[340px] lg:w-[400px] flex-shrink-0 md:sticky md:top-8">
+            <img
+              src={igorFull}
+              alt="Igor Gagliardi"
+              className="w-full h-auto object-cover"
+              loading="lazy"
+            />
           </div>
         </div>
       </div>
