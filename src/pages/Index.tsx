@@ -18,16 +18,17 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background flex flex-col items-center px-4 py-12">
       <div className="w-full max-w-xl flex flex-col items-center">
-        {/* Profile */}
-        <div className="w-36 h-36 rounded-full overflow-hidden mb-6 ring-2 ring-border">
-          <img src={igorProfile} alt="Igor Gagliardi" className="w-full h-full object-cover" />
-        </div>
-
-        <div className="relative inline-flex items-center px-8 py-3 rounded-xl bg-foreground/5 backdrop-blur-md border border-foreground/10 overflow-hidden mb-4">
-          <div className="absolute inset-0 glass-shimmer" />
-          <h1 className="relative font-display text-3xl md:text-4xl font-medium tracking-tight text-foreground">
-            Igor Gagliardi
-          </h1>
+        {/* Profile + Name overlapping */}
+        <div className="relative flex flex-col items-center mb-4">
+          <div className="w-36 h-36 rounded-full overflow-hidden ring-2 ring-border">
+            <img src={igorProfile} alt="Igor Gagliardi" className="w-full h-full object-cover" />
+          </div>
+          <div className="relative -mt-6 z-10 inline-flex items-center px-8 py-3 rounded-xl bg-foreground/5 backdrop-blur-md border border-foreground/10 overflow-hidden">
+            <div className="absolute inset-0 glass-shimmer" />
+            <h1 className="relative font-display text-3xl md:text-4xl font-medium tracking-tight text-foreground">
+              Igor Gagliardi
+            </h1>
+          </div>
         </div>
         <p className="text-muted-foreground text-sm font-body tracking-wide text-center mb-1">
           Estrategista de Marca & Marketing e Fotógrafo.
