@@ -1,33 +1,38 @@
 
 
-## Plano: Reunir todas as frases no mesmo bloco escuro
+## Plano: Sobreposição sutil foto+assinatura sobre bloco escuro + assinatura menor
 
-O usuário quer que "Estrategista de Marca & Marketing", "Fotógrafo | Artista", "Fundador do Studio 131..." e "Nos links abaixo..." estejam todos dentro do mesmo bloco escuro, com espaçamento leve entre os parágrafos e hierarquia de fonte decrescente.
+### 1. Reduzir margem entre os 3 blocos e criar sobreposição
 
-### Alteração em `src/pages/Index.tsx` (linhas 33-54)
+Atualmente o bloco profile+assinatura tem `mb-4` e o bloco escuro tem `mt-6`. Vou:
+- Remover `mb-4` do container da foto/assinatura
+- Trocar `mt-6` por `-mt-8` no bloco escuro para que ele suba e fique parcialmente atrás do bloco da foto
+- Adicionar `pt-12` ao conteúdo interno do bloco escuro para compensar a sobreposição e manter o texto visível
+- Garantir que o bloco da foto tenha `z-10` e o bloco escuro fique atrás com `z-0`
 
-Remover o bloco `{/* Tagline */}` separado (linhas 33-41) e mover o texto para dentro do bloco escuro. Resultado:
+### 2. Reduzir tamanho da assinatura
 
+Trocar `h-10 md:h-12` por `h-7 md:h-8` para alinhar melhor com o tamanho da frase "Estrategista de Marca & Marketing".
+
+### Alterações em `src/pages/Index.tsx`
+
+**Linha 23** — remover `mb-4`, adicionar `z-10 relative`:
 ```tsx
-{/* Dark bar - all text together */}
-<div className="w-full relative rounded-2xl overflow-hidden mt-6 mb-10">
-  <div className="absolute inset-0 dusty-film-bg" />
-  <div className="relative bg-foreground/90 rounded-2xl px-4 py-5 text-center">
-    <p className="text-primary-foreground text-sm font-body tracking-wide max-w-[280px] mx-auto mb-1">
-      Estrategista de Marca & Marketing
-    </p>
-    <p className="text-primary-foreground text-sm font-body tracking-wide max-w-[280px] mx-auto mb-4">
-      Fotógrafo | Artista
-    </p>
-    <p className="text-primary-foreground/70 text-xs font-body tracking-wide max-w-[260px] mx-auto mb-3">
-      Fundador do Studio 131 onde construímos uma Jornada de Ascensão.
-    </p>
-    <p className="text-primary-foreground/50 text-[10px] font-body tracking-wide max-w-[240px] mx-auto">
-      Nos links abaixo compartilho diversos conteúdos sobre o nosso universo:
-    </p>
-  </div>
-</div>
+<div className="relative flex flex-col items-center z-10">
 ```
 
-Hierarquia: `text-sm` → `text-sm` → `text-xs` (70% opacidade) → `text-[10px]` (50% opacidade). Espaçamento entre "Fotógrafo | Artista" e "Fundador" levemente maior (`mb-4`).
+**Linha 32** — reduzir altura da assinatura:
+```tsx
+className="relative h-7 md:h-8 w-auto brightness-0 invert ..."
+```
+
+**Linha 37** — sobreposição no bloco escuro:
+```tsx
+<div className="w-full relative rounded-2xl overflow-hidden -mt-8 mb-10">
+```
+
+**Linha 39** — padding-top extra para compensar sobreposição:
+```tsx
+<div className="relative bg-foreground/90 rounded-2xl px-4 pt-10 pb-5 text-center">
+```
 
