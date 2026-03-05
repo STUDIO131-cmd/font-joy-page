@@ -30,20 +30,16 @@ const Index = () => {
             </h1>
           </div>
         </div>
-        {/* Tagline */}
-        <div className="text-center mt-4 mb-6">
-          <p className="text-muted-foreground text-sm font-body tracking-wide">
-            Estrategista de Marca & Marketing
-          </p>
-          <p className="text-muted-foreground text-sm font-body tracking-wide">
-            Fotógrafo | Artista
-          </p>
-        </div>
-
-        {/* Dark bar - matching image width */}
-        <div className="w-full relative rounded-2xl overflow-hidden mb-10">
+        {/* Dark bar - all text together */}
+        <div className="w-full relative rounded-2xl overflow-hidden mt-6 mb-10">
           <div className="absolute inset-0 dusty-film-bg" />
           <div className="relative bg-foreground/90 rounded-2xl px-4 py-5 text-center">
+            <p className="text-primary-foreground text-sm font-body tracking-wide max-w-[280px] mx-auto mb-1">
+              Estrategista de Marca & Marketing
+            </p>
+            <p className="text-primary-foreground text-sm font-body tracking-wide max-w-[280px] mx-auto mb-4">
+              Fotógrafo | Artista
+            </p>
             <p className="text-primary-foreground/70 text-xs font-body tracking-wide max-w-[260px] mx-auto mb-3">
               Fundador do Studio 131 onde construímos uma Jornada de Ascensão.
             </p>
