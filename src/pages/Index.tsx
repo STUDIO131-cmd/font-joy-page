@@ -51,7 +51,7 @@ const Index = () => {
             <div className="absolute -top-[50%] -left-[10%] w-[40%] h-[200%] bg-gradient-to-br from-primary-foreground/[0.06] via-primary-foreground/[0.02] to-transparent rotate-[25deg]" />
           </div>
           <div className="relative bg-foreground rounded-2xl px-4 pt-12 pb-5 text-center">
-            <p className="text-primary-foreground text-[11px] md:text-sm font-body tracking-wide whitespace-nowrap mx-auto mb-1">
+            <p className="text-primary-foreground text-sm font-body tracking-wide whitespace-nowrap mx-auto mb-1">
               Estrategista de Marca & Marketing
             </p>
             <p className="text-primary-foreground/80 text-xs font-body tracking-wide mx-auto mb-4">
