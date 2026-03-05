@@ -94,12 +94,20 @@ const Index = () => {
           <div className="absolute inset-0 bio-glass-bg" />
           <div className="relative bg-foreground/[0.03] backdrop-blur-sm border border-foreground/[0.08] rounded-2xl overflow-hidden">
             <div className="w-full flex flex-col gap-8 p-6 md:p-10">
+              {/* Polaroid - mobile only, shown first */}
+              <div className="flex md:hidden justify-center order-1">
+                <div className="relative bg-[hsl(35_30%_94%)] p-3 pb-10 rounded-sm shadow-xl rotate-1 max-w-[213px] polaroid-texture-container">
+                  <div className="absolute inset-0 polaroid-texture rounded-sm pointer-events-none" />
+                  <img src={igorFull} alt="Igor Gagliardi" className="relative w-full h-auto object-cover object-top rounded-sm" loading="lazy" />
+                </div>
+              </div>
+
               {/* Title */}
-              <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-medium text-foreground leading-[1.1]">
+              <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-medium text-foreground leading-[1.1] order-2 md:order-1">
                 Prazer, Igor Augusto Gagliardi
               </h2>
 
-              <div className="flex flex-col-reverse md:flex-row items-center md:items-start gap-8">
+              <div className="flex flex-col md:flex-row items-center md:items-start gap-8 order-3 md:order-2">
                 {/* Bio text */}
                 <div className="md:w-[55%] space-y-3 text-xs md:text-sm leading-relaxed text-muted-foreground font-body text-justify">
                   <p>Empreendedor há 10 anos.</p>
@@ -116,16 +124,11 @@ const Index = () => {
                   <p>Aqui você não encontrará atalhos nem promessas fáceis, mas clareza, estrutura e construção de longo prazo. Não acredito em nada diferente disso!</p>
                 </div>
 
-                {/* Polaroid photo */}
-                <div className="md:w-[45%] flex items-center justify-center">
+                {/* Polaroid - desktop only */}
+                <div className="hidden md:flex md:w-[45%] items-center justify-center">
                   <div className="relative bg-[hsl(35_30%_94%)] p-3 pb-10 rounded-sm shadow-xl rotate-1 max-w-[213px] polaroid-texture-container">
                     <div className="absolute inset-0 polaroid-texture rounded-sm pointer-events-none" />
-                    <img
-                      src={igorFull}
-                      alt="Igor Gagliardi"
-                      className="relative w-full h-auto object-cover object-top rounded-sm"
-                      loading="lazy"
-                    />
+                    <img src={igorFull} alt="Igor Gagliardi" className="relative w-full h-auto object-cover object-top rounded-sm" loading="lazy" />
                   </div>
                 </div>
               </div>
