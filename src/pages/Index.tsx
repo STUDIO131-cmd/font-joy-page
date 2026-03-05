@@ -41,11 +41,16 @@ const Index = () => {
         {/* Dark bar - all text together */}
         <div className="w-full relative rounded-2xl overflow-hidden -mt-8 mb-10">
           <div className="absolute inset-0 dusty-film-bg" />
-          {/* Subtle blur light reflections */}
-          <div className="absolute -top-10 -left-10 w-40 h-40 bg-primary-foreground/[0.07] rounded-full blur-3xl pointer-events-none" />
-          <div className="absolute -bottom-8 -right-8 w-32 h-32 bg-primary-foreground/[0.05] rounded-full blur-3xl pointer-events-none" />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-24 bg-primary-foreground/[0.04] rounded-full blur-3xl pointer-events-none" />
-          <div className="relative bg-foreground/95 rounded-2xl px-4 pt-12 pb-5 text-center">
+          {/* Glass-like diagonal light reflections */}
+          <div className="absolute -top-16 -left-16 w-56 h-56 bg-primary-foreground/[0.08] rounded-full blur-[80px] pointer-events-none" />
+          <div className="absolute -bottom-12 -right-12 w-44 h-44 bg-primary-foreground/[0.06] rounded-full blur-[70px] pointer-events-none" />
+          <div className="absolute top-[30%] left-[20%] w-64 h-20 bg-primary-foreground/[0.04] rounded-full blur-[60px] pointer-events-none rotate-[-20deg]" />
+          <div className="absolute top-[15%] right-[10%] w-32 h-32 bg-primary-foreground/[0.03] rounded-full blur-[50px] pointer-events-none" />
+          {/* Diagonal glass shine overlay */}
+          <div className="absolute inset-0 pointer-events-none overflow-hidden">
+            <div className="absolute -top-[50%] -left-[10%] w-[40%] h-[200%] bg-gradient-to-br from-primary-foreground/[0.06] via-primary-foreground/[0.02] to-transparent rotate-[25deg]" />
+          </div>
+          <div className="relative bg-foreground rounded-2xl px-4 pt-12 pb-5 text-center">
             <p className="text-primary-foreground text-sm font-body tracking-wide whitespace-nowrap mx-auto mb-1">
               Estrategista de Marca & Marketing
             </p>
