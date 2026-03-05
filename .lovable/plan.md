@@ -1,35 +1,32 @@
 
 
-## Plano: Background glassmorphism na seção de biografia
+## Plano: Ajustar bloco de texto escuro
 
-### Alterações
+### Alterações em `src/pages/Index.tsx` (linhas 33-45)
 
-**1. `src/pages/Index.tsx` (linha 58-59)**
-Adicionar classes de glassmorphism no container da bio:
-- Trocar o div wrapper atual por um com `bg-black/5 backdrop-blur-sm border border-white/20 rounded-2xl overflow-hidden` 
-- Manter `max-w-6xl` mas adicionar margem interna com padding
-- A foto precisa ter `rounded-r-2xl` para acompanhar o arredondamento do container
+1. **Espaçamento do topo**: adicionar `mt-6` no container para distanciar do nome
+2. **Largura igual aos banners**: trocar `px-6` por `px-4` no container interno (alinhando com o `p-4` do container de links)
+3. **Texto quebrado em múltiplas linhas centralizadas**: adicionar `max-w-[280px] mx-auto` nos parágrafos
+4. **Hierarquia de fonte decrescente**: 
+   - Linha 1 ("Estrategista..."): mantém `text-sm`
+   - Linha 2 ("Fundador..."): `text-xs` + `text-primary-foreground/70`
+   - Linha 3 ("Nos links..."): `text-[10px]` + `text-primary-foreground/50`
 
-**2. `src/index.css`**
-Adicionar uma animação sutil de gradiente no fundo do bloco bio:
-- Keyframe `bio-glow` que move um gradiente radial suave, criando um efeito de luz pulsante atrás do glass
-- Classe `.bio-glass-bg` com a animação
-
-### Detalhes das mudanças:
-
-**Container bio (Index.tsx linhas 57-58):**
+Resultado:
+```tsx
+<div className="w-full relative rounded-2xl overflow-hidden mt-6 mb-10">
+  <div className="absolute inset-0 dusty-film-bg" />
+  <div className="relative bg-foreground/90 rounded-2xl px-4 py-5 text-center">
+    <p className="text-primary-foreground text-sm font-body tracking-wide max-w-[280px] mx-auto mb-1">
+      Estrategista de Marca & Marketing | Fotógrafo | Artista
+    </p>
+    <p className="text-primary-foreground/70 text-xs font-body tracking-wide max-w-[260px] mx-auto mb-3">
+      Fundador do Studio 131 onde construímos uma Jornada de Ascensão.
+    </p>
+    <p className="text-primary-foreground/50 text-[10px] font-body tracking-wide max-w-[240px] mx-auto">
+      Nos links abaixo compartilho diversos conteúdos sobre o nosso universo:
+    </p>
+  </div>
+</div>
 ```
-<div className="w-full max-w-6xl px-4 mt-16">
-```
-→
-```
-<div className="w-full max-w-6xl px-4 mt-16">
-  <div className="relative rounded-2xl overflow-hidden">
-    <div className="absolute inset-0 bio-glass-bg" />
-    <div className="relative bg-black/[0.03] backdrop-blur-sm border border-black/[0.08] rounded-2xl overflow-hidden">
-```
-
-**Fechar os novos divs** após o fechamento do flex container (linha 112).
-
-**index.css:** Adicionar keyframe `bio-glow` — gradiente radial que se desloca lentamente (8-10s loop), com opacidade muito baixa para criar um efeito luminoso sutil.
 
