@@ -38,18 +38,20 @@ const Index = () => {
         </p>
 
         {/* Link Banners */}
-        <div className="w-full flex flex-col gap-4 mb-16">
-          {links.map((link, i) =>
-          <a
-            key={i}
-            href={link.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block w-full rounded-xl overflow-hidden transition-transform duration-300 hover:scale-[1.02] hover:shadow-lg">
-            
-              <img src={link.img} alt={link.alt} className="w-full h-auto" loading="lazy" />
+        <div className="w-full relative rounded-2xl overflow-hidden mb-16">
+          <div className="absolute inset-0 links-glass-bg" />
+          <div className="relative bg-foreground/[0.02] backdrop-blur-sm border border-foreground/[0.08] rounded-2xl p-4 flex flex-col gap-4">
+            {links.map((link, i) =>
+            <a
+              key={i}
+              href={link.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block w-full rounded-xl overflow-hidden transition-transform duration-300 hover:scale-[1.02] hover:shadow-lg">
+              <img src={link.img} alt={link.alt} className="w-full h-auto rounded-xl" loading="lazy" />
             </a>
-          )}
+            )}
+          </div>
         </div>
 
       </div>
