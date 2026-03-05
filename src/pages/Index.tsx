@@ -5,6 +5,7 @@ import banner3 from "@/assets/banner-3.png";
 import banner4 from "@/assets/banner-4.png";
 import banner5 from "@/assets/banner-5.png";
 import igorFull from "@/assets/igor-full.png";
+import assinatura from "@/assets/assinatura.png";
 
 const links = [
 { img: banner1, url: "https://www.studio131.com.br/lancamento/", alt: "Inscreva-se e receba os próximos treinamentos" },
@@ -25,9 +26,11 @@ const Index = () => {
           </div>
           <div className="relative -mt-6 z-10 inline-flex items-center px-8 py-3 rounded-xl bg-foreground/5 backdrop-blur-md border-foreground/10 overflow-hidden border-0">
             <div className="absolute inset-0 glass-shimmer" />
-            <h1 className="relative font-display text-3xl md:text-4xl font-medium tracking-tight text-foreground">
-              Igor Gagliardi
-            </h1>
+            <img
+              src={assinatura}
+              alt="Igor Gagliardi"
+              className="relative h-10 md:h-12 w-auto brightness-0 invert drop-shadow-[0_0_12px_rgba(255,255,255,0.4)] drop-shadow-[0_0_24px_rgba(220,220,220,0.2)]"
+            />
           </div>
         </div>
         {/* Dark bar - all text together */}
