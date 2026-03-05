@@ -30,12 +30,20 @@ const Index = () => {
             </h1>
           </div>
         </div>
-        <p className="text-muted-foreground text-sm font-body tracking-wide text-center mb-1">
-          Estrategista de Marca & Marketing e Fotógrafo.
-        </p>
-        <p className="text-muted-foreground text-sm font-body tracking-wide text-center mb-10">
-          Fundador do Studio 131 onde construímos uma Jornada de Ascensão.
-        </p>
+        <div className="w-full relative rounded-2xl overflow-hidden mb-10">
+          <div className="absolute inset-0 dusty-film-bg" />
+          <div className="relative bg-foreground/90 rounded-2xl px-6 py-5 text-center">
+            <p className="text-primary-foreground text-sm font-body tracking-wide mb-1">
+              Estrategista de Marca & Marketing | Fotógrafo | Artista
+            </p>
+            <p className="text-primary-foreground/70 text-sm font-body tracking-wide mb-3">
+              Fundador do Studio 131 onde construímos uma Jornada de Ascensão.
+            </p>
+            <p className="text-primary-foreground/50 text-xs font-body tracking-wide">
+              Nos links abaixo compartilho diversos conteúdos sobre o nosso universo:
+            </p>
+          </div>
+        </div>
 
         {/* Link Banners */}
         <div className="w-full relative rounded-2xl overflow-hidden mb-16">
