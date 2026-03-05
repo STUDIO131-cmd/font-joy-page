@@ -20,7 +20,7 @@ const Index = () => {
     <div className="min-h-screen bg-background flex flex-col items-center px-4 py-12 border-4">
       <div className="w-full max-w-xl flex flex-col items-center gap-[10px]">
         {/* Profile + Name overlapping */}
-        <div className="relative flex flex-col items-center mb-4">
+        <div className="relative flex flex-col items-center z-10">
           <div className="w-36 h-36 rounded-full overflow-hidden ring-2 ring-border">
             <img src={igorProfile} alt="Igor Gagliardi" className="w-full h-full object-cover border-solid border-4" />
           </div>
@@ -29,14 +29,14 @@ const Index = () => {
             <img
               src={assinatura}
               alt="Igor Gagliardi"
-              className="relative h-10 md:h-12 w-auto brightness-0 invert drop-shadow-[0_0_12px_rgba(255,255,255,0.4)] drop-shadow-[0_0_24px_rgba(220,220,220,0.2)]"
+              className="relative h-7 md:h-8 w-auto brightness-0 invert drop-shadow-[0_0_12px_rgba(255,255,255,0.4)] drop-shadow-[0_0_24px_rgba(220,220,220,0.2)]"
             />
           </div>
         </div>
         {/* Dark bar - all text together */}
-        <div className="w-full relative rounded-2xl overflow-hidden mt-6 mb-10">
+        <div className="w-full relative rounded-2xl overflow-hidden -mt-8 mb-10">
           <div className="absolute inset-0 dusty-film-bg" />
-          <div className="relative bg-foreground/90 rounded-2xl px-4 py-5 text-center">
+          <div className="relative bg-foreground/90 rounded-2xl px-4 pt-12 pb-5 text-center">
             <p className="text-primary-foreground text-sm font-body tracking-wide whitespace-nowrap mx-auto mb-1">
               Estrategista de Marca & Marketing
             </p>
