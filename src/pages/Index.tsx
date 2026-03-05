@@ -41,7 +41,11 @@ const Index = () => {
         {/* Dark bar - all text together */}
         <div className="w-full relative rounded-2xl overflow-hidden -mt-8 mb-10">
           <div className="absolute inset-0 dusty-film-bg" />
-          <div className="relative bg-foreground/90 rounded-2xl px-4 pt-12 pb-5 text-center">
+          {/* Subtle blur light reflections */}
+          <div className="absolute -top-10 -left-10 w-40 h-40 bg-primary-foreground/[0.07] rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute -bottom-8 -right-8 w-32 h-32 bg-primary-foreground/[0.05] rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-24 bg-primary-foreground/[0.04] rounded-full blur-3xl pointer-events-none" />
+          <div className="relative bg-foreground/95 rounded-2xl px-4 pt-12 pb-5 text-center">
             <p className="text-primary-foreground text-sm font-body tracking-wide whitespace-nowrap mx-auto mb-1">
               Estrategista de Marca & Marketing
             </p>
