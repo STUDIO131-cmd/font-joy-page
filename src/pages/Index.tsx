@@ -23,7 +23,7 @@ const Index = () => {
       {/* Animated light leak */}
       <div className="fixed inset-0 pointer-events-none z-0 light-leak-animation" />
 
-      <div className="relative z-10 w-full max-w-xl flex flex-col items-center gap-[10px]">
+      <div className="relative z-10 w-full max-w-xl flex flex-col items-center gap-4">
         {/* Profile + Name overlapping */}
         <div className="relative flex flex-col items-center z-10">
           <div className="w-36 h-36 rounded-full overflow-hidden ring-2 ring-border">
@@ -39,7 +39,7 @@ const Index = () => {
           </div>
         </div>
         {/* Dark bar - all text together */}
-        <div className="w-full relative rounded-2xl overflow-hidden -mt-8 mb-10">
+        <div className="w-full relative rounded-2xl overflow-hidden -mt-8 mb-4">
           <div className="absolute inset-0 dusty-film-bg" />
           {/* Glass-like diagonal light reflections */}
           <div className="absolute -top-16 -left-16 w-56 h-56 bg-primary-foreground/[0.08] rounded-full blur-[80px] pointer-events-none" />
@@ -70,7 +70,7 @@ const Index = () => {
         </div>
 
         {/* Link Banners */}
-        <div className="w-full relative rounded-2xl overflow-hidden mb-16">
+        <div className="w-full relative rounded-2xl overflow-hidden mb-4">
           <div className="absolute inset-0 links-glass-bg" />
           <div className="relative bg-foreground/[0.02] backdrop-blur-sm border border-foreground/[0.08] rounded-2xl p-4 flex flex-col gap-4">
             {links.map((link, i) =>
@@ -89,7 +89,7 @@ const Index = () => {
       </div>
 
       {/* Bio Section - wider container */}
-      <div className="w-full max-w-6xl px-4 mt-16">
+      <div className="w-full max-w-6xl px-4 mt-4">
         <div className="relative rounded-2xl overflow-hidden">
           <div className="absolute inset-0 bio-glass-bg" />
           <div className="relative bg-foreground/[0.03] backdrop-blur-sm border border-foreground/[0.08] rounded-2xl overflow-hidden">
