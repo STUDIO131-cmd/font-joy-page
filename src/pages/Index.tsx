@@ -136,6 +136,28 @@ const Index = () => {
           </div>
         </div>
       </div>
+
+      {/* Footer */}
+      <footer className="w-full bg-foreground mt-8 py-12 flex flex-col items-center gap-6">
+        <button
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          className="relative inline-flex items-center px-10 py-3 rounded-xl bg-primary-foreground/5 backdrop-blur-md border border-primary-foreground/10 overflow-hidden cursor-pointer"
+        >
+          <div className="absolute inset-0 glass-shimmer" />
+          <span className="relative font-body text-primary-foreground/80 text-xs uppercase tracking-[0.3em]">
+            Voltar ao topo
+          </span>
+        </button>
+        <div className="flex items-center gap-2 text-primary-foreground/50 text-[10px] font-body tracking-wide">
+          <span>Feito com muita estratégia por</span>
+          <span>—</span>
+          <img
+            src={assinatura}
+            alt="Igor Gagliardi"
+            className="h-3.5 w-auto brightness-0 invert opacity-50"
+          />
+        </div>
+      </footer>
     </div>);
 
 };
