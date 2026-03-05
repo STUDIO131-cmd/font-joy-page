@@ -99,9 +99,21 @@ const Index = () => {
                 Prazer, Igor Augusto Gagliardi
               </h2>
 
-              <div className="flex flex-col md:flex-row items-center md:items-start gap-8">
+              <div className="flex flex-col md:flex-row items-center md:items-start gap-4 md:gap-8">
+                {/* Photo - icon on mobile, polaroid on desktop */}
+                <div className="order-first md:order-last md:w-[45%] flex items-center justify-center">
+                  <div className="relative w-20 h-20 rounded-full overflow-hidden md:w-auto md:h-auto md:rounded-sm md:overflow-visible md:bg-[hsl(35_30%_94%)] md:p-3 md:pb-10 md:shadow-xl md:rotate-1 md:max-w-xs md:polaroid-texture-container">
+                    <div className="hidden md:block absolute inset-0 polaroid-texture rounded-sm pointer-events-none" />
+                    <img
+                      src={igorFull}
+                      alt="Igor Gagliardi"
+                      className="relative w-full h-full object-cover object-top rounded-full md:rounded-sm md:h-auto"
+                      loading="lazy"
+                    />
+                  </div>
+                </div>
                 {/* Bio text */}
-                <div className="md:w-[55%] space-y-3 text-xs md:text-sm leading-relaxed text-muted-foreground font-body text-justify">
+                <div className="md:w-[55%] space-y-3 text-xs md:text-sm leading-relaxed text-muted-foreground font-body text-center md:text-justify">
                   <p>Empreendedor há 10 anos.</p>
                   <p>Sou artista, comunicador e um amante da organização.</p>
                   <p>Minha carreira começa na fotografia e ganha forma no projeto "Como Você Se Vê?", que alcançou reconhecimento regional e construiu uma marca registrada no segmento.</p>
@@ -114,19 +126,6 @@ const Index = () => {
                   <p>A fotografia segue como meu eixo artístico.</p>
                   <p>A estratégia, como instrumento de crescimento.</p>
                   <p>Aqui você não encontrará atalhos nem promessas fáceis, mas clareza, estrutura e construção de longo prazo. Não acredito em nada diferente disso!</p>
-                </div>
-
-                {/* Polaroid photo */}
-                <div className="md:w-[45%] flex items-center justify-center">
-                  <div className="relative bg-[hsl(35_30%_94%)] p-3 pb-10 rounded-sm shadow-xl rotate-1 max-w-xs polaroid-texture-container">
-                    <div className="absolute inset-0 polaroid-texture rounded-sm pointer-events-none" />
-                    <img
-                      src={igorFull}
-                      alt="Igor Gagliardi"
-                      className="relative w-full h-auto object-cover object-top rounded-sm"
-                      loading="lazy"
-                    />
-                  </div>
                 </div>
               </div>
             </div>
