@@ -39,7 +39,7 @@ const Index = () => {
           </div>
         </div>
         {/* Dark bar - all text together */}
-        <div className="w-full relative rounded-2xl overflow-hidden -mt-8 mb-4 p-4 border border-foreground/[0.08]">
+        <div className="w-full relative rounded-2xl overflow-hidden -mt-12 mb-4 p-4 border border-foreground/[0.08]">
           <div className="absolute inset-0 dusty-film-bg" />
           {/* Glass-like diagonal light reflections */}
           <div className="absolute -top-16 -left-16 w-56 h-56 bg-primary-foreground/[0.08] rounded-full blur-[80px] pointer-events-none" />
