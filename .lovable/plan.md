@@ -1,28 +1,29 @@
 
 
-## Plano: Bio mobile — foto pequena como ícone + texto centralizado
+## Plano: Layout lado a lado — Texto | Foto
 
-### Alteração em `src/pages/Index.tsx` (linhas 96-131)
+### Alteração em `src/pages/Index.tsx` (linhas 87-119)
 
-**Mobile (default):**
-- Reordenar: foto vem **primeiro**, texto **abaixo**
-- Foto: tamanho pequeno tipo ícone (~`w-20 h-20`), sem padding de polaroid, `rounded-full` ou mantém polaroid mas bem menor (`max-w-[80px]`), centralizada
-- Texto: `text-center` (remover `text-justify` no mobile)
+Trocar o layout vertical centralizado por duas colunas lado a lado:
 
-**Desktop (`md:`):**
-- Mantém layout atual lado a lado (55% texto | 45% foto com polaroid grande)
+- **Container**: `flex flex-col md:flex-row items-center md:items-start gap-8`
+- **Coluna 1 (texto)**: `md:w-[55%]` com título e parágrafos em `text-justify`
+- **Coluna 2 (foto)**: `md:w-[45%] flex items-center justify-center` com a polaroid centralizada verticalmente
 
-### Implementação
+Em mobile, mantém empilhado vertical. Em desktop, fica lado a lado.
 
-Na div container (linha 102):
-- Manter `flex-col md:flex-row`
-- Inverter ordem no mobile usando `order`: foto com `order-first md:order-last`
+```
+┌─────────────────────────────────────────┐
+│  Prazer, Igor Augusto Gagliardi         │
+│                                         │
+│  Texto justificado...  │   [Polaroid]   │
+│  Texto justificado...  │   [  Foto  ]   │
+│  Texto justificado...  │               │
+└─────────────────────────────────────────┘
+```
 
-Na polaroid (linhas 120-130):
-- Mobile: `w-20 h-20 rounded-full overflow-hidden` com `p-0 pb-0` — sem moldura polaroid
-- Desktop: mantém polaroid com `p-3 pb-10 max-w-xs rotate-1`
-- Usar classes responsivas: `w-20 h-20 md:w-auto md:h-auto rounded-full md:rounded-sm p-0 md:p-3 pb-0 md:pb-10`
-
-No texto (linha 104):
-- `text-center md:text-justify`
+### Detalhes
+- Título fica acima das duas colunas (`w-full`)
+- Texto: `text-justify` (remover `text-center max-w-2xl`)
+- Polaroid: centralizada na coluna direita com `sticky top-10` ou apenas `flex items-center justify-center h-full`
 
