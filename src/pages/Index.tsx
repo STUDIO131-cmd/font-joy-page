@@ -126,7 +126,7 @@ const Index = () => {
 
                 {/* Polaroid - desktop only */}
                 <div className="hidden md:flex md:w-[45%] items-center justify-center">
-                  <div className="relative bg-[hsl(35_30%_94%)] p-3 pb-10 rounded-sm shadow-xl rotate-1 max-w-[213px] polaroid-texture-container">
+                  <div className="relative bg-[hsl(35_30%_94%)] p-3 pb-10 rounded-sm shadow-xl rotate-1 max-w-[320px] polaroid-texture-container">
                     <div className="absolute inset-0 polaroid-texture rounded-sm pointer-events-none" />
                     <img src={igorFull} alt="Igor Gagliardi" className="relative w-full h-auto object-cover object-top rounded-sm" loading="lazy" />
                   </div>
