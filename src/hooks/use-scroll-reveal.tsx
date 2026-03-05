@@ -1,0 +1,29 @@
+import { useEffect, useRef } from "react";
+
+export function useScrollReveal<T extends HTMLElement = HTMLDivElement>(delay = 0) {
+  const ref = useRef<T>(null);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+
+    if (delay > 0) {
+      el.style.transitionDelay = `${delay}ms`;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          el.classList.add("revealed");
+          observer.unobserve(el);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [delay]);
+
+  return ref;
+}

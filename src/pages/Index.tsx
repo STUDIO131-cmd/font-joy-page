@@ -6,6 +6,7 @@ import banner4 from "@/assets/banner-4.png";
 import banner5 from "@/assets/banner-5.png";
 import igorFull from "@/assets/igor-full.png";
 import assinatura from "@/assets/assinatura.png";
+import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 const links = [
 { img: banner1, url: "https://www.studio131.com.br/lancamento/", alt: "Inscreva-se e receba os próximos treinamentos" },
@@ -14,8 +15,27 @@ const links = [
 { img: banner4, url: "https://youtube.com/@igor-gagliardi?si=EM_S-kuYn4txDIu1", alt: "YouTube" },
 { img: banner5, url: "https://wa.me/5517992595117?text=Ol%C3%A1,%20STUDIO%20131%20-%20vim%20do%20site%20e%20quero%20um%20atendimento%20pr%C3%B3ximo.", alt: "WhatsApp" }];
 
+const LinkBanner = ({ link, index }: { link: (typeof links)[0]; index: number }) => {
+  const ref = useScrollReveal<HTMLAnchorElement>(index * 100);
+  return (
+    <a
+      ref={ref}
+      href={link.url}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="scroll-reveal block w-full rounded-xl overflow-hidden transition-transform duration-300 hover:scale-[1.02] hover:shadow-lg">
+      <img src={link.img} alt={link.alt} className="w-full h-auto rounded-xl" loading="lazy" />
+    </a>
+  );
+};
 
 const Index = () => {
+  const profileRef = useScrollReveal();
+  const darkBarRef = useScrollReveal(100);
+  const linksRef = useScrollReveal(200);
+  const bioRef = useScrollReveal();
+  const footerRef = useScrollReveal();
+
   return (
     <div className="min-h-screen bg-background flex flex-col items-center px-4 py-12 relative overflow-hidden">
       {/* Grain texture overlay */}
@@ -25,7 +45,7 @@ const Index = () => {
 
       <div className="relative z-10 w-full max-w-xl flex flex-col items-center gap-4">
         {/* Profile + Name overlapping */}
-        <div className="relative flex flex-col items-center z-10">
+        <div ref={profileRef} className="scroll-reveal relative flex flex-col items-center z-10">
           <div className="w-36 h-36 rounded-full overflow-hidden ring-2 ring-border">
             <img src={igorProfile} alt="Igor Gagliardi" className="w-full h-full object-cover border-solid border-4" />
           </div>
@@ -39,14 +59,12 @@ const Index = () => {
           </div>
         </div>
         {/* Dark bar - all text together */}
-        <div className="w-full relative rounded-2xl overflow-hidden -mt-12 mb-4 p-4 border border-foreground/[0.08]">
+        <div ref={darkBarRef} className="scroll-reveal w-full relative rounded-2xl overflow-hidden -mt-12 mb-4 p-4 border border-foreground/[0.08]">
           <div className="absolute inset-0 dusty-film-bg" />
-          {/* Glass-like diagonal light reflections */}
           <div className="absolute -top-16 -left-16 w-56 h-56 bg-primary-foreground/[0.08] rounded-full blur-[80px] pointer-events-none" />
           <div className="absolute -bottom-12 -right-12 w-44 h-44 bg-primary-foreground/[0.06] rounded-full blur-[70px] pointer-events-none" />
           <div className="absolute top-[30%] left-[20%] w-64 h-20 bg-primary-foreground/[0.04] rounded-full blur-[60px] pointer-events-none rotate-[-20deg]" />
           <div className="absolute top-[15%] right-[10%] w-32 h-32 bg-primary-foreground/[0.03] rounded-full blur-[50px] pointer-events-none" />
-          {/* Diagonal glass shine overlay */}
           <div className="absolute inset-0 pointer-events-none overflow-hidden">
             <div className="absolute -top-[50%] -left-[10%] w-[40%] h-[200%] bg-gradient-to-br from-primary-foreground/[0.06] via-primary-foreground/[0.02] to-transparent rotate-[25deg]" />
           </div>
@@ -70,31 +88,24 @@ const Index = () => {
         </div>
 
         {/* Link Banners */}
-        <div className="w-full relative rounded-2xl overflow-hidden mb-4">
+        <div ref={linksRef} className="scroll-reveal w-full relative rounded-2xl overflow-hidden mb-4">
           <div className="absolute inset-0 links-glass-bg" />
           <div className="relative bg-foreground/[0.02] backdrop-blur-sm border border-foreground/[0.08] rounded-2xl p-4 flex flex-col gap-4">
-            {links.map((link, i) =>
-            <a
-              key={i}
-              href={link.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block w-full rounded-xl overflow-hidden transition-transform duration-300 hover:scale-[1.02] hover:shadow-lg">
-              <img src={link.img} alt={link.alt} className="w-full h-auto rounded-xl" loading="lazy" />
-            </a>
-            )}
+            {links.map((link, i) => (
+              <LinkBanner key={i} link={link} index={i} />
+            ))}
           </div>
         </div>
 
       </div>
 
       {/* Bio Section - wider container */}
-      <div className="w-full max-w-6xl px-4 mt-4">
+      <div ref={bioRef} className="scroll-reveal w-full max-w-6xl px-4 mt-4">
         <div className="relative rounded-2xl overflow-hidden">
           <div className="absolute inset-0 bio-glass-bg" />
           <div className="relative bg-foreground/[0.03] backdrop-blur-sm border border-foreground/[0.08] rounded-2xl overflow-hidden">
             <div className="w-full flex flex-col gap-8 p-6 md:p-10">
-              {/* Polaroid - mobile only, shown first */}
+              {/* Polaroid - mobile only */}
               <div className="flex md:hidden justify-center order-1">
                 <div className="relative bg-[hsl(35_30%_94%)] p-3 pb-10 rounded-sm shadow-xl rotate-1 max-w-[213px] polaroid-texture-container">
                   <div className="absolute inset-0 polaroid-texture rounded-sm pointer-events-none" />
@@ -102,13 +113,11 @@ const Index = () => {
                 </div>
               </div>
 
-              {/* Title */}
               <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-medium text-foreground leading-[1.1] order-2 md:order-1">
                 Prazer, Igor Augusto Gagliardi
               </h2>
 
               <div className="flex flex-col md:flex-row items-center md:items-start gap-8 order-3 md:order-2">
-                {/* Bio text */}
                 <div className="md:w-[55%] space-y-3 text-xs md:text-sm leading-relaxed text-muted-foreground font-body text-justify">
                   <p>Empreendedor há 10 anos.</p>
                   <p>Sou artista, comunicador e um amante da organização.</p>
@@ -124,7 +133,6 @@ const Index = () => {
                   <p>Aqui você não encontrará atalhos nem promessas fáceis, mas clareza, estrutura e construção de longo prazo. Não acredito em nada diferente disso!</p>
                 </div>
 
-                {/* Polaroid - desktop only */}
                 <div className="hidden md:flex md:w-[45%] items-center justify-center">
                   <div className="relative bg-[hsl(35_30%_94%)] p-3 pb-10 rounded-sm shadow-xl rotate-1 w-fit polaroid-texture-container">
                     <div className="absolute inset-0 polaroid-texture rounded-sm pointer-events-none" />
@@ -138,7 +146,7 @@ const Index = () => {
       </div>
 
       {/* Footer */}
-      <footer className="w-full bg-foreground mt-8 py-12 flex flex-col items-center gap-6">
+      <footer ref={footerRef} className="scroll-reveal w-full bg-foreground mt-8 py-12 flex flex-col items-center gap-6">
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           className="relative inline-flex items-center px-10 py-3 rounded-xl bg-primary-foreground/5 backdrop-blur-md border border-primary-foreground/10 overflow-hidden cursor-pointer"
