@@ -1,29 +1,17 @@
 
 
-## Plano: Layout lado a lado — Texto | Foto
+## Plano: Inverter ordem no mobile + reduzir polaroid
 
-### Alteração em `src/pages/Index.tsx` (linhas 87-119)
+### Alterações em `src/pages/Index.tsx`
 
-Trocar o layout vertical centralizado por duas colunas lado a lado:
-
-- **Container**: `flex flex-col md:flex-row items-center md:items-start gap-8`
-- **Coluna 1 (texto)**: `md:w-[55%]` com título e parágrafos em `text-justify`
-- **Coluna 2 (foto)**: `md:w-[45%] flex items-center justify-center` com a polaroid centralizada verticalmente
-
-Em mobile, mantém empilhado vertical. Em desktop, fica lado a lado.
+**1. Inverter ordem no mobile (linha 102)**
+- Adicionar `flex-col-reverse` para que no mobile a polaroid apareça antes do texto
+- Desktop mantém `md:flex-row` (texto à esquerda, foto à direita)
 
 ```
-┌─────────────────────────────────────────┐
-│  Prazer, Igor Augusto Gagliardi         │
-│                                         │
-│  Texto justificado...  │   [Polaroid]   │
-│  Texto justificado...  │   [  Foto  ]   │
-│  Texto justificado...  │               │
-└─────────────────────────────────────────┘
+flex flex-col-reverse md:flex-row
 ```
 
-### Detalhes
-- Título fica acima das duas colunas (`w-full`)
-- Texto: `text-justify` (remover `text-center max-w-2xl`)
-- Polaroid: centralizada na coluna direita com `sticky top-10` ou apenas `flex items-center justify-center h-full`
+**2. Reduzir polaroid em 1/3 (linha 120-130)**
+- Alterar `max-w-xs` (~320px) para `max-w-[213px]` (~2/3 do original)
 
