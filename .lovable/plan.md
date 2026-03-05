@@ -1,14 +1,17 @@
 
 
-## Plano: Glass bar sobreposta ao box escuro
+## Plano: Rodapé preto com "Voltar ao topo" e créditos
 
-### Alteração em `src/pages/Index.tsx`
+### Estrutura do rodapé (ao final de `src/pages/Index.tsx`)
 
-**Linha 42**: Aumentar o valor negativo de `-mt-8` para `-mt-12`, puxando o box escuro mais para cima. Como o bloco do perfil/assinatura já tem `z-10`, a glass bar ficará visualmente sobreposta ao topo do box escuro.
+1. **Container**: `bg-foreground` (preto), full-width, padding, flex column centralizado
+2. **Botão "Voltar ao topo"**: estilo glass bar (similar à glass bar da assinatura), com `font-body` (TikTok Sans), tracking expandido (`tracking-[0.3em]`), texto uppercase. Ao clicar, `window.scrollTo({ top: 0, behavior: 'smooth' })`
+3. **Linha de créditos abaixo**: texto pequeno (`text-[10px]`) em `text-primary-foreground/50`, centralizado, layout inline:
+   - "Feito com muita estratégia por" — texto
+   - Separador `—`
+   - Imagem `assinatura.png` inline (altura ~14px), com `brightness-0 invert` para ficar branca
 
-```
--mt-8  →  -mt-12
-```
-
-Se necessário ajustar mais, pode-se usar `-mt-14`.
+### Arquivo: `src/pages/Index.tsx`
+- Adicionar seção `<footer>` após o container da bio, fora do `max-w-6xl`
+- Botão glass bar com efeito shimmer reutilizando a classe `.glass-shimmer` existente
 
