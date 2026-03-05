@@ -17,8 +17,13 @@ const links = [
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background flex flex-col items-center px-4 py-12 border-4">
-      <div className="w-full max-w-xl flex flex-col items-center gap-[10px]">
+    <div className="min-h-screen bg-background flex flex-col items-center px-4 py-12 relative overflow-hidden">
+      {/* Grain texture overlay */}
+      <div className="fixed inset-0 pointer-events-none z-0 opacity-[0.08] grain-texture" />
+      {/* Animated light leak */}
+      <div className="fixed inset-0 pointer-events-none z-0 light-leak-animation" />
+
+      <div className="relative z-10 w-full max-w-xl flex flex-col items-center gap-[10px]">
         {/* Profile + Name overlapping */}
         <div className="relative flex flex-col items-center z-10">
           <div className="w-36 h-36 rounded-full overflow-hidden ring-2 ring-border">
