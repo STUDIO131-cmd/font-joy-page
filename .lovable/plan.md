@@ -1,17 +1,12 @@
 
 
-## Plano: Inverter ordem no mobile + reduzir polaroid
+## Plano: Polaroid maior e centralizada no desktop
 
-### Alterações em `src/pages/Index.tsx`
+### Alteração em `src/pages/Index.tsx`
 
-**1. Inverter ordem no mobile (linha 102)**
-- Adicionar `flex-col-reverse` para que no mobile a polaroid apareça antes do texto
-- Desktop mantém `md:flex-row` (texto à esquerda, foto à direita)
+**Polaroid desktop (linha 128-133):**
+- Aumentar `max-w-[213px]` para `max-w-[320px]` (volta ao tamanho original)
+- Manter centralização vertical com `items-center justify-center`
 
-```
-flex flex-col-reverse md:flex-row
-```
-
-**2. Reduzir polaroid em 1/3 (linha 120-130)**
-- Alterar `max-w-xs` (~320px) para `max-w-[213px]` (~2/3 do original)
+A polaroid mobile permanece com `max-w-[213px]` (menor, como solicitado anteriormente).
 
