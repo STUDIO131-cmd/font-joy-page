@@ -216,3 +216,50 @@
     0 1px 3px hsl(var(--foreground) / 0.08),
     inset 0 0 0 1px hsl(var(--foreground) / 0.04);
 }
+
+/* Scroll reveal animations */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(20px) scale(0.97);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  position: relative;
+  overflow: hidden;
+}
+
+.scroll-reveal.revealed {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.scroll-reveal.revealed::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    hsl(var(--foreground) / 0.06) 40%,
+    hsl(var(--foreground) / 0.12) 50%,
+    hsl(var(--foreground) / 0.06) 60%,
+    transparent 100%
+  );
+  width: 50%;
+  animation: glass-reveal-shine 0.8s ease-out 0.3s forwards;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 20;
+}
+
+@keyframes glass-reveal-shine {
+  0% {
+    transform: translateX(-100%) skewX(-15deg);
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(300%) skewX(-15deg);
+    opacity: 0;
+  }
+}
