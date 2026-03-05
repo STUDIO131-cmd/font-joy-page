@@ -99,7 +99,7 @@ const Index = () => {
                 Prazer, Igor Augusto Gagliardi
               </h2>
 
-              <div className="flex flex-col md:flex-row items-center md:items-start gap-8">
+              <div className="flex flex-col-reverse md:flex-row items-center md:items-start gap-8">
                 {/* Bio text */}
                 <div className="md:w-[55%] space-y-3 text-xs md:text-sm leading-relaxed text-muted-foreground font-body text-justify">
                   <p>Empreendedor há 10 anos.</p>
@@ -118,7 +118,7 @@ const Index = () => {
 
                 {/* Polaroid photo */}
                 <div className="md:w-[45%] flex items-center justify-center">
-                  <div className="relative bg-[hsl(35_30%_94%)] p-3 pb-10 rounded-sm shadow-xl rotate-1 max-w-xs polaroid-texture-container">
+                  <div className="relative bg-[hsl(35_30%_94%)] p-3 pb-10 rounded-sm shadow-xl rotate-1 max-w-[213px] polaroid-texture-container">
                     <div className="absolute inset-0 polaroid-texture rounded-sm pointer-events-none" />
                     <img
                       src={igorFull}
