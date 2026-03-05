@@ -34,17 +34,17 @@ const Index = () => {
         <div className="w-full relative rounded-2xl overflow-hidden mt-6 mb-10">
           <div className="absolute inset-0 dusty-film-bg" />
           <div className="relative bg-foreground/90 rounded-2xl px-4 py-5 text-center">
-            <p className="text-primary-foreground text-sm font-body tracking-wide max-w-[280px] mx-auto mb-1">
+            <p className="text-primary-foreground text-sm font-body tracking-wide whitespace-nowrap mx-auto mb-1">
               Estrategista de Marca & Marketing
             </p>
-            <p className="text-primary-foreground text-sm font-body tracking-wide max-w-[280px] mx-auto mb-4">
+            <p className="text-primary-foreground text-sm font-body tracking-wide mx-auto mb-4">
               Fotógrafo | Artista
             </p>
             <p className="text-primary-foreground/70 text-xs font-body tracking-wide max-w-[260px] mx-auto mb-3">
               Fundador do Studio 131 onde construímos uma Jornada de Ascensão.
             </p>
             <p className="text-primary-foreground/50 text-[10px] font-body tracking-wide max-w-[240px] mx-auto">
-              Nos links abaixo compartilho diversos conteúdos sobre o nosso universo:
+              Nos links abaixo compartilho portfólio e conteúdos.<br />Sinta-se em casa!
             </p>
           </div>
         </div>
