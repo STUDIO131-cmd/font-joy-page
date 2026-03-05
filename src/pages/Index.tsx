@@ -41,7 +41,7 @@ const Index = () => {
         {/* Dark bar - all text together */}
         <div className="w-full relative rounded-2xl overflow-hidden -mt-8 mb-10">
           <div className="absolute inset-0 dusty-film-bg" />
-          <div className="relative bg-foreground/80 backdrop-blur-xl rounded-2xl px-4 pt-12 pb-5 text-center border border-foreground/20 shadow-[inset_0_1px_1px_rgba(255,255,255,0.08),0_20px_40px_rgba(0,0,0,0.4)]">
+          <div className="relative bg-foreground/90 rounded-2xl px-4 pt-12 pb-5 text-center">
             <p className="text-primary-foreground text-sm font-body tracking-wide whitespace-nowrap mx-auto mb-1">
               Estrategista de Marca & Marketing
             </p>
