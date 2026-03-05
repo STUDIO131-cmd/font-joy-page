@@ -1,32 +1,29 @@
 
 
-## Plano: Atualizar bio — texto, título e foto polaroid
+## Plano: Layout lado a lado — Texto | Foto
 
-### 1. Atualizar título (linha 90-92)
-Trocar "Prazer, eu\<br/\>sou Igor." por "Prazer, Igor Augusto Gagliardi" em uma única linha, com tamanho maior (`text-3xl md:text-4xl lg:text-5xl`).
+### Alteração em `src/pages/Index.tsx` (linhas 87-119)
 
-### 2. Atualizar textos da bio (linhas 94-127)
-Substituir todos os parágrafos pelo novo conteúdo fornecido pelo usuário (12 parágrafos).
+Trocar o layout vertical centralizado por duas colunas lado a lado:
 
-### 3. Foto em polaroid vintage (linhas 131-139)
-Transformar o container da foto em um efeito polaroid:
-- Fundo branco/creme (`bg-[#f5f0e8]`) com padding assimétrico (mais embaixo, como polaroid real): `p-3 pb-10`
-- Sombra suave e rotação leve (`rotate-1 shadow-lg`)
-- Bordas arredondadas no container externo (`rounded-sm`)
-- Foto com bordas levemente arredondadas (`rounded-sm`)
-- Textura de papel antigo via pseudo-elemento com grain sutil
+- **Container**: `flex flex-col md:flex-row items-center md:items-start gap-8`
+- **Coluna 1 (texto)**: `md:w-[55%]` com título e parágrafos em `text-justify`
+- **Coluna 2 (foto)**: `md:w-[45%] flex items-center justify-center` com a polaroid centralizada verticalmente
 
-### 4. Layout — centralizar e reduzir foto
-Mudar de layout lado-a-lado (55%/45%) para layout empilhado vertical centralizado:
-- Texto ocupa `w-full text-center` (ou `text-left` mantendo o estilo atual)
-- Polaroid centralizada abaixo do texto, com `max-w-xs` para ser menor
+Em mobile, mantém empilhado vertical. Em desktop, fica lado a lado.
 
-### Alterações em arquivos
+```
+┌─────────────────────────────────────────┐
+│  Prazer, Igor Augusto Gagliardi         │
+│                                         │
+│  Texto justificado...  │   [Polaroid]   │
+│  Texto justificado...  │   [  Foto  ]   │
+│  Texto justificado...  │               │
+└─────────────────────────────────────────┘
+```
 
-**`src/pages/Index.tsx`** — linhas 87-140:
-- Layout: `flex-col items-center` (remover `md:flex-row`)
-- Texto: conteúdo atualizado, título em linha única e maior
-- Foto: envolver em div polaroid com styling vintage
-
-**`src/index.css`** — adicionar classe `.polaroid-texture` com grain sutil para simular papel antigo.
+### Detalhes
+- Título fica acima das duas colunas (`w-full`)
+- Texto: `text-justify` (remover `text-center max-w-2xl`)
+- Polaroid: centralizada na coluna direita com `sticky top-10` ou apenas `flex items-center justify-center h-full`
 
