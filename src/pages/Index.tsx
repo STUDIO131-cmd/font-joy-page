@@ -76,6 +76,7 @@ const Index = () => {
           <div className="absolute inset-0 links-glass-bg" />
           <div className="relative bg-foreground/[0.02] backdrop-blur-sm border border-foreground/[0.08] rounded-2xl p-4 flex flex-col gap-4">
             {links.map((link, i) =>
+            link.url ? (
             <a
               key={i}
               href={link.url}
@@ -84,6 +85,11 @@ const Index = () => {
               className="block w-full rounded-xl overflow-hidden transition-transform duration-300 hover:scale-[1.02] hover:shadow-lg">
               <img src={link.img} alt={link.alt} className="w-full h-auto rounded-xl" loading="lazy" />
             </a>
+            ) : (
+            <div key={i} className="block w-full rounded-xl overflow-hidden opacity-80">
+              <img src={link.img} alt={link.alt} className="w-full h-auto rounded-xl" loading="lazy" />
+            </div>
+            )
             )}
           </div>
         </div>
