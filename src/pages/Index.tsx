@@ -9,11 +9,12 @@ import igorFull from "@/assets/igor-full.png";
 import assinatura from "@/assets/assinatura.png";
 
 const links = [
-{ img: banner1, url: "https://www.studio131.com.br/lancamento/", alt: "Inscreva-se e receba os próximos treinamentos" },
-{ img: banner2, url: "https://www.studio131.com.br/studio131/", alt: "Conheça a nossa agência 131" },
-{ img: banner3, url: "https://www.studio131.com.br/oplanoprofissional/", alt: "O Plano Profissional" },
-{ img: banner4, url: "https://youtube.com/@igor-gagliardi?si=EM_S-kuYn4txDIu1", alt: "YouTube" },
-{ img: banner5, url: "https://wa.me/5517992595117?text=Ol%C3%A1,%20STUDIO%20131%20-%20vim%20do%20site%20e%20quero%20um%20atendimento%20pr%C3%B3ximo.", alt: "WhatsApp" }];
+{ img: banner1, url: "https://www.studio131.com.br/studio131/", alt: "Conheça a nossa agência 131" },
+{ img: banner2, url: "https://www.studio131.com.br/oplanoprofissional/", alt: "O Plano Profissional" },
+{ img: banner3, url: "https://www.studio131.com.br/lancamento/", alt: "Campanhas" },
+{ img: banner4, url: "#", alt: "131 Fotos - Em Breve" },
+{ img: banner5, url: "https://youtube.com/@igor-gagliardi?si=EM_S-kuYn4txDIu1", alt: "Visite meu canal no YouTube" },
+{ img: banner6, url: "https://wa.me/5517992595117?text=Ol%C3%A1,%20STUDIO%20131%20-%20vim%20do%20site%20e%20quero%20um%20atendimento%20pr%C3%B3ximo.", alt: "Contato" }];
 
 
 const Index = () => {
