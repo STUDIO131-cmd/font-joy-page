@@ -4,7 +4,6 @@ import banner2 from "@/assets/banner-2.png";
 import banner3 from "@/assets/banner-3.png";
 import banner4 from "@/assets/banner-4.png";
 import banner5 from "@/assets/banner-5.png";
-import banner6 from "@/assets/banner-6.png";
 import igorFull from "@/assets/igor-full.png";
 import assinatura from "@/assets/assinatura.png";
 
@@ -13,8 +12,7 @@ const links = [
 { img: banner2, url: "https://planoprofissional.studio131.com.br", alt: "O Plano Profissional" },
 { img: banner3, url: "https://campanhas.studio131.com.br", alt: "Campanhas" },
 { img: banner4, url: "", alt: "131 Fotos - Em Breve" },
-{ img: banner5, url: "https://youtube.com/@igor-gagliardi?si=ahthIwDYlWLYNNC3", alt: "Visite meu canal no YouTube" },
-{ img: banner6, url: "https://wa.me/+5517992595117?text=Ol%C3%A1!%20Vim%20do%20link%20@igorgagliardi", alt: "Contato" }];
+{ img: banner5, url: "https://youtube.com/@igor-gagliardi?si=ahthIwDYlWLYNNC3", alt: "Visite meu canal no YouTube" }];
 
 
 const Index = () => {
