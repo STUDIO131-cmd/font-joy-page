@@ -11,7 +11,7 @@ const links = [
 { img: banner1, url: "https://sobre.studio131.com.br", alt: "Conheça a nossa agência 131" },
 { img: banner2, url: "https://planoprofissional.studio131.com.br", alt: "O Plano Profissional" },
 { img: banner3, url: "https://campanhas.studio131.com.br", alt: "Campanhas" },
-{ img: banner4, url: "", alt: "131 Fotos - Em Breve" },
+{ img: banner4, url: "https://fotos.studio131.com.br", alt: "131 Fotos" },
 { img: banner5, url: "https://youtube.com/@igor-gagliardi?si=ahthIwDYlWLYNNC3", alt: "Visite meu canal no YouTube" }];
 
 
