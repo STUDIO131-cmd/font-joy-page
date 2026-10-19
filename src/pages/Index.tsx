@@ -116,18 +116,18 @@ const Index = () => {
               <div className="flex flex-col md:flex-row items-center md:items-start gap-8 order-3 md:order-2">
                 {/* Bio text */}
                 <div className="md:w-[55%] space-y-3 text-xs md:text-sm leading-relaxed text-muted-foreground font-body text-justify">
-                  <p>Empreendedor há 10 anos.</p>
-                  <p>Sou artista, comunicador e um amante da organização.</p>
+                  <p>Empreendedor há 11 anos. Comecei cedo e de forma intuitíva.</p>
+                  <p>Hoje sou artista e estrategista ao mesmo tempo.</p>
                   <p>Minha carreira começa na fotografia e ganha forma no projeto "Como Você Se Vê?", que alcançou reconhecimento regional e construiu uma marca registrada no segmento.</p>
                   <p>Esse projeto foi meu primeiro laboratório em marketing.</p>
-                  <p>Entendi na prática, como comunicação e influência guiam decisões.</p>
+                  <p>Entendi na prática, como comunicação e influência guiam decisões e usava disso para gerar demanda e criar uma marca forte.</p>
                   <p>Esse olhar passou a ser justamente o que meus clientes buscavam.</p>
                   <p>Dessa necessidade nasceu o Studio 131, minha agência de conteúdo e mídia.</p>
                   <p>Sou reconhecido por integrar visão criativa e pensamento estratégico em negócios.</p>
-                  <p>Esse desenvolvimento me levou a criar programas educacionais e consultorias na The Journey — nossa frente de educação.</p>
-                  <p>A fotografia segue como meu eixo artístico.</p>
+                  <p>Esse desenvolvimento me levou a criar programas educacionais e consultorias e criar nossa frente de educação.</p>
+                  <p>A fotografia segue como uma ferramenta.</p>
                   <p>A estratégia, como instrumento de crescimento.</p>
-                  <p>Aqui você não encontrará atalhos nem promessas fáceis, mas clareza, estrutura e construção de longo prazo. Não acredito em nada diferente disso!</p>
+                  <p>Aqui você não encontrará atalhos nem promessas fáceis, mas clareza, estrutura e construção de longo prazo. Não acredito em nada diferente disso.</p>
                 </div>
 
                 {/* Polaroid - desktop only */}
