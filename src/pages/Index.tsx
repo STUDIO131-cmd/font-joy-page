@@ -118,7 +118,7 @@ const Index = () => {
                 <div className="md:w-[55%] space-y-3 text-xs md:text-sm leading-relaxed text-muted-foreground font-body text-justify">
                   <p>Empreendedor há 11 anos. Comecei cedo e de forma intuitíva.</p>
                   <p>Hoje sou artista e estrategista ao mesmo tempo.</p>
-                  <p>Minha carreira começa na fotografia e ganha forma no projeto "Como Você Se Vê?", que alcançou reconhecimento regional e construiu uma marca registrada no segmento.</p>
+                  <p>Minha carreira iniciou na fotografia e tomou forma no projeto "Como Você Se Vê?", que alcançou reconhecimento regional e construiu uma marca registrada no segmento.</p>
                   <p>Esse projeto foi meu primeiro laboratório em marketing.</p>
                   <p>Entendi na prática, como comunicação e influência guiam decisões e usava disso para gerar demanda e criar uma marca forte.</p>
                   <p>Esse olhar passou a ser justamente o que meus clientes buscavam.</p>
